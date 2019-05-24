@@ -10,7 +10,16 @@
 #include <random>
 #include <vector>
 
+#if defined( __GNUC__ ) && __GNUC__ >= 6 
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wignored-attributes"
+#endif 
+
 #include <CL/cl2.hpp>
+
+#if defined( __GNUC__ ) && __GNUC__ >= 6
+    #pragma GCC diagnostic pop
+#endif
 
 int main( void )
 {
