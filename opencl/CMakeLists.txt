@@ -7,7 +7,7 @@ find_package( OpenCL REQUIRED )
 add_executable( vec_add_opencl_cxx vec_add_opencl.cpp )
 
 target_link_libraries( vec_add_opencl_cxx ${OpenCL_LIBRARIES} )
-target_include_directories( vec_add_opencl_cxx PRIVATE ${OpenCL_INCLUDE_DIRS} )
+target_include_directories( vec_add_opencl_cxx PRIVATE ${OpenCL_INCLUDE_DIRS} ${CMAKE_SOURCE_DIR} )
 
 target_compile_definitions( vec_add_opencl_cxx PRIVATE
     -DCL_HPP_MINIMUM_OPENCL_VERSION=110
